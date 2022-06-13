@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/navbar.component";
 
-function App() {
+const ActivitiesPage = lazy(() => import("./pages/activities/activities.page"));
+const AddActivityPage = lazy(() =>
+  import("./pages/activities/add-activity.page")
+);
+const EditActivityPage = lazy(() =>
+  import("./pages/activities/edit-activity.page")
+);
+const StudentsPage = lazy(() => import("./pages/students/students.page"));
+const DocumentsPage = lazy(() => import("./pages/documents/documents.page"));
+const AddDocumentPage = lazy(() =>
+  import("./pages/documents/add-document.page")
+);
+const EditDocumentPage = lazy(() =>
+  import("./pages/documents/edit-document.page")
+);
+
+const App = () => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="m-0 p-0">
+      <Suspense fallback={<div> Loading... </div>}>
+        {location.pathname.toString().startsWith("/admin/") && <Navbar />}
+        <Routes>
+          <Route path="/admin/activities" element={<ActivitiesPage />} />
+          <Route path="/admin/add-activity" element={<AddActivityPage />} />
+          <Route path="/admin/edit-activity" element={<EditActivityPage />} />
+          <Route path="/admin/students" element={<StudentsPage />} />
+          <Route path="/admin/documents" element={<DocumentsPage />} />
+          <Route path="/admin/add-document" element={<AddDocumentPage />} />
+          <Route path="/admin/edit-document" element={<EditDocumentPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
-}
+};
 
 export default App;

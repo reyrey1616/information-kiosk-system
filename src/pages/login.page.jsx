@@ -26,7 +26,7 @@ const LoginForm = () => {
     ) {
       localStorage.setItem("isLoggedIn", true);
       alert("Login success");
-      navigate("/admin/dashboard");
+      navigate("/admin/activities");
     } else {
       localStorage.setItem("isLoggedIn", false);
       alert("Login failed: Username or password is incorrect!");

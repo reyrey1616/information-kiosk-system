@@ -103,16 +103,11 @@ const EditActivityForm = ({ data }) => {
         rules={[{ required: true, message: "Please select department!" }]}
       >
         <Select>
-          <Option value="BSE">BSE</Option>
-          <Option value="BSHM">BSHM</Option>
-          <Option value="BSHRM">BSHRM</Option>
-          <Option value="BLGA">BLGA</Option>
-          <Option value="BSF">BSF</Option>
-          <Option value="BSED">BSED</Option>
-          <Option value="BEED">BEED</Option>
-          <Option value="BSIS">BSIS</Option>
-          <Option value="BSCS">BSCS</Option>
-          <Option value="BSIT">BSIT</Option>
+          <Option value="CCS">CCS</Option>
+          <Option value="CTE">CTE</Option>
+          <Option value="COF">COF</Option>
+          <Option value="CBM">CBM</Option>
+          <Option value="General">General</Option>
         </Select>
       </Form.Item>
 

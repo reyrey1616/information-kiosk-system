@@ -1,6 +1,5 @@
 import axios from "axios";
 import moment from "moment";
-const BASE_URL = "http://localhost:5000";
 export const getActivities = async () => {
   try {
     const URL = `/activities`;

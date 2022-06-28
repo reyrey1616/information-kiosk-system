@@ -1,13 +1,23 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { Avatar, Image } from "antd";
+import Logo from "../images/logo.png";
 const NavMenu = () => {
   const router = useLocation();
   return (
     <nav className="navbar navbar-light navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <NavLink to="/admin/dashboard" className="navbar-brand">
-          UA-TLMC Information Kiosk
-        </NavLink>
+        <div className="d-flex align-items-center">
+          <Avatar
+            shape="square"
+            size={64}
+            style={{ marginRight: "10px" }}
+            src={<Image src={Logo} style={{ width: 64 }} />}
+          />
+          <NavLink to="/admin/activities" className="navbar-brand">
+            <p className="fs-3 m-0"> UA-TLMC Information Kiosk</p>
+          </NavLink>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,7 +31,7 @@ const NavMenu = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to="/admin/dashboard"
                 className="nav-link"
@@ -29,7 +39,7 @@ const NavMenu = () => {
               >
                 Home
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/admin/activities">
                 Activities

@@ -17,6 +17,8 @@ const AddDocumentPage = lazy(() =>
 const EditDocumentPage = lazy(() =>
   import("./pages/documents/edit-document.page")
 );
+const LoginPage = lazy(() => import("./pages/login.page"));
+const HomePage = lazy(() => import("./pages/home/home.page"));
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +28,8 @@ const App = () => {
       <Suspense fallback={<div> Loading... </div>}>
         {location.pathname.toString().startsWith("/admin/") && <Navbar />}
         <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/admin/activities" element={<ActivitiesPage />} />
           <Route path="/admin/add-activity" element={<AddActivityPage />} />
           <Route path="/admin/edit-activity" element={<EditActivityPage />} />

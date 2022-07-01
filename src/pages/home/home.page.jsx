@@ -85,6 +85,74 @@ const HomePage = () => {
         <center>
           <img src={Map} className="campus-map" alt="UA-TLMC Campus Map" />
         </center>
+
+        <p className="fs-3">Legend</p>
+        <div className="p-2 row">
+          <div className="col-md-4 col-xs-6">
+            <p>1. ADMINISTRATION BLDG (OLD)</p>
+            <p>2. ADMINISTRATION BLDG (NEW)</p>
+            <p>3. SUPPLY STOCK ROOM</p>
+            <p>4. SAS/ROTC OFFICE</p>
+            <p>5. HRM LAB/OLD KITCHEN</p>
+            <p>6. BED BLDG</p>
+            <p>7. BL BLDG</p>
+            <p>8. FTD BLDG A</p>
+            <p>9. FTD BLDG B</p>
+            <p>10. CAMPUS LIBRARY</p>
+            <p>11. CANTEEN </p>
+            <p>12. GUARD HOUSE</p>
+            <p>
+              13.TEACHER EDUC. OFFICE, LHS PRINCIPAL’S OFFICE, ABD MEDICAL &
+              DENTAL CLINIC
+            </p>
+            <p>14. BANDOJA BLDG</p>
+          </div>
+          <div className="col-md-4 col-xs-6">
+            <p>
+              15. AVR, ACCREDITATION CENTER, COMPUTER LAB CAD. & RESEARCH CLINIC
+            </p>
+            <p>16. AUDITORIUM</p>
+            <p>17. SCIENCE BLDG</p>
+            <p>18. SWIMMING POOL</p>
+            <p>19. SHAHAN1 & LHS BLDG</p>
+            <p>20. RECREATION & FITNESS CENTER (FORMERLY COVERED GYM)</p>
+            <p>21. NEW HRM LABORATORY</p>
+            <p>22. HOMTEL BLDG</p>
+            <p>23. LT. BLDG</p>
+            <p>24. ALUMNI BLDG</p>
+            <p>25. GRANDSTAND</p>
+            <p>26. ATHLETIC OVAL</p>
+            <p>27. STUDENT LOUNGE</p>
+          </div>
+          <div className="col-md-4 col-xs-6">
+            <p>28. LT. CENTER</p>
+            <p>29. GEN. EDUC. BLDG</p>
+            <p>30. COTTAGES</p>
+            <p>31. MALE & FEMALE RESTROOM 1</p>
+            <p>32. SCIENCE LABORATORY</p>
+            <p>33. SMART BLDG</p>
+            <p>34. ACADEMIC BLDG</p>
+            <p>35. MALE & FEMALE RESTROOM 2</p>
+            <p>36. MALE & FEMALE RESTROOM 3</p>
+            <p>37. PEFA BLDG</p>
+            <p>38. FTC BLDG</p>
+            <p>39. FTC MULTI FISH HATCHERY</p>
+            <p>40. FTC RESEARCH CENTER</p>
+            <p>41. INFORMATION CENTER</p>
+          </div>
+        </div>
+
+        <div className="p-2 row mt-2">
+          <div className="col-md-12">
+            <p>1. –Y MULTIPLE INTELLIGENCE, RESEARCH CENTER & CAMPUS</p>
+            <p>2. –Y HUMAN CAPITAL SERVICES DEVELOPMENT CENTER</p>
+            <p>3. –Y WOMEN’S DORMITORY</p>
+            <p>4. –Y RECREATION & FITNESS CENTER</p>
+            <p>5. –Y FISHERIES</p>
+            <p>6. –Y MEN’S DORMITORY</p>
+            <p>7. –Y FUNCTIONAL HALL</p>
+          </div>
+        </div>
       </div>
 
       <div className="footer">

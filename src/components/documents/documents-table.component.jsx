@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Switch } from "antd";
 import { updatePermission } from "../../functions/documents";
 
-const URL = `http://localhost:4000/uploads/`;
+const URL = `https://information-kiosk-api.uc.r.appspot.com/uploads/`;
 const DocumentsTable = () => {
   const [documents, setDocuments] = useState([]);
   const [isError, setIsError] = useState(false);

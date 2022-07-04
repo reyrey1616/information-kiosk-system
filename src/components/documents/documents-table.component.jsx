@@ -58,7 +58,8 @@ const DocumentsTable = () => {
                     <th>{fullName}</th>
                     <th>
                       <a
-                        href={`${URL}${d.fileName}`}
+                        // href={`${URL}${d.fileName}`}
+                        href={`https://storage.cloud.google.com/kiosk-uploads/${d.fileName}`}
                         download="Download"
                         target="_blank"
                       >

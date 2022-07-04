@@ -11,7 +11,6 @@ import axios from "axios";
 if (process.env.NODE_ENV === "development") {
   // axios.defaults.baseURL = "http://localhost:4000";
 
-  // axios.defaults.baseURL = "https://information-kiosk-api.herokuapp.com/";
   axios.defaults.baseURL = "https://information-kiosk-api.uc.r.appspot.com/";
 } else {
   axios.defaults.baseURL = "  https://information-kiosk-api.uc.r.appspot.com/";

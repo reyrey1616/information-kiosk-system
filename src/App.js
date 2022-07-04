@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./components/navbar.component";
 
 const ActivitiesPage = lazy(() => import("./pages/activities/activities.page"));
@@ -19,10 +19,19 @@ const EditDocumentPage = lazy(() =>
 );
 const LoginPage = lazy(() => import("./pages/login.page"));
 const HomePage = lazy(() => import("./pages/home/home.page"));
-
 const App = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (location.pathname.toString().startsWith("/admin/")) {
+      if (isLoggedIn === "false") {
+        navigate("/login");
+      }
+    }
+  }, [location]);
+
   return (
     <div className="m-0 p-0">
       <Suspense fallback={<div> Loading... </div>}>

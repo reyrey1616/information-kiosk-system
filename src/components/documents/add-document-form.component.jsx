@@ -8,11 +8,11 @@ const AddDocumentForm = ({ students }) => {
   const [form] = Form.useForm();
   const [file, setFile] = useState(null);
   const onFinish = async (values) => {
-    console.log(values);
     values.file = file;
     const { success } = await addDocument(values);
 
     if (success) {
+      form.resetFields();
       alert("Document Added!");
     } else {
       alert("Error adding document, please try again later!");

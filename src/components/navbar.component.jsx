@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Avatar, Image } from "antd";
 import Logo from "../images/logo.png";
+import { useNavigate } from "react-router-dom";
+
 const NavMenu = () => {
-  const router = useLocation();
+  const navigate = useNavigate();
   return (
     <nav className="navbar navbar-light navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -57,7 +59,13 @@ const NavMenu = () => {
             </li>
           </ul>
           <div className="d-flex">
-            <button className="btn btn-outline-success" type="submit">
+            <button
+              className="btn btn-outline-success"
+              onClick={() => {
+                localStorage.setItem("isLoggedIn", false);
+                navigate(`/login`);
+              }}
+            >
               Logout
             </button>
           </div>

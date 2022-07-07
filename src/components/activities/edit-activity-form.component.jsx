@@ -24,7 +24,6 @@ const EditActivityForm = ({ data }) => {
       alert("Error updating activity, please try again later!");
     }
   };
-  console.log(data);
 
   return (
     <Form

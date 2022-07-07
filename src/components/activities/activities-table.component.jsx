@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getActivities } from "../../functions/activities";
+import { getActivities, deleteActivity } from "../../functions/activities";
 import { Modal, Button } from "antd";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
@@ -10,19 +10,17 @@ const ActivitiesTable = () => {
   const [selectedActivity, setSelectedActivity] = useState();
 
   const navigate = useNavigate();
-
+  const loadActivities = async () => {
+    const { success, data } = await getActivities();
+    if (success === false) {
+      alert("Error loading activities");
+      setIsError(true);
+    } else {
+      setIsError(false);
+      setActivities(data);
+    }
+  };
   useEffect(() => {
-    const loadActivities = async () => {
-      const { success, data } = await getActivities();
-      if (success === false) {
-        alert("Error loading activities");
-        setIsError(true);
-      } else {
-        setIsError(false);
-        setActivities(data);
-      }
-    };
-
     loadActivities();
   }, []);
   return (
@@ -82,6 +80,28 @@ const ActivitiesTable = () => {
                       >
                         {" "}
                         Edit
+                      </button>
+                      <button
+                        className="btn btn-danger ms-2"
+                        onClick={async () => {
+                          if (
+                            window.confirm(
+                              "Are you sure you want to delete this activity?"
+                            )
+                          ) {
+                            const { success, data } = await deleteActivity(
+                              d._id
+                            );
+                            if (success === false) {
+                              alert("Error deleting activity, try again later");
+                            } else {
+                              loadActivities();
+                            }
+                          }
+                        }}
+                      >
+                        {" "}
+                        Delete
                       </button>
                     </th>
                   </tr>

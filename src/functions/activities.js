@@ -108,3 +108,21 @@ export const updateActivity = async (data) => {
     };
   }
 };
+export const deleteActivity = async (id) => {
+  try {
+    const URL = `/activities/${id}`;
+    const request = await axios.delete(URL);
+    const response = await request.data;
+
+    console.log(response);
+    return {
+      success: true,
+      data: response.data,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      success: false,
+    };
+  }
+};

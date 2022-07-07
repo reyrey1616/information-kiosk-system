@@ -26,10 +26,17 @@ const HomePage = () => {
                   Learn more
                 </a>
               </button>
-              <button className="btn btn-success btn-lg">
-                {" "}
-                Download the App
-              </button>
+
+              <a
+                href={`https://drive.google.com/file/d/1X74o8hJdhUrIMmgyTW_iQZbLNKvdSvWV/view`}
+                download="Download"
+                target="_blank"
+              >
+                <button className="btn btn-success btn-lg">
+                  {" "}
+                  Download the App
+                </button>
+              </a>
             </div>
           </center>
         </div>
